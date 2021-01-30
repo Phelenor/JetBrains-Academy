@@ -1,0 +1,3 @@
+Russia : Moscow : 2
+France : Paris : 1
+Japan : Tokyo : 0

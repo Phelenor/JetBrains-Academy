@@ -1,0 +1,17 @@
+fun search(string: String) {
+        val list = ArrayList<Person>()
+  loop@  for(person in database) {
+            for(property in person.data()) {
+                if(property.toUpperCase().contains(string.toUpperCase())) {
+                    list.add(person)
+                    continue@loop
+                }
+            }
+        }
+        if(list.isEmpty()) {
+            println("No matching people found.")
+            println()
+        } else {
+            list.forEach {println(it)}
+        }
+    }

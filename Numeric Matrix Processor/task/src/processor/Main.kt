@@ -4,9 +4,11 @@ import java.util.*
 
 val reader = Scanner(System.`in`)
 
+
 fun main() {
     run()
 }
+
 
 fun run() {
     while(true) {
@@ -76,6 +78,7 @@ fun run() {
     }
 }
 
+
 fun createMatrix(num: String = "first"): Array<DoubleArray> {
     print("Enter size of $num matrix: ")
     val rows = reader.nextInt()
@@ -91,6 +94,7 @@ fun createMatrix(num: String = "first"): Array<DoubleArray> {
     return matrix
 }
 
+
 fun addMatrices(m1: Array<DoubleArray>, m2: Array<DoubleArray>): Array<DoubleArray>?{
     if(m1.size != m2.size || m1[0].size != m2[0].size) {
         println("ERROR")
@@ -105,6 +109,7 @@ fun addMatrices(m1: Array<DoubleArray>, m2: Array<DoubleArray>): Array<DoubleArr
     }
     return matrix
 }
+
 
 fun transpose(m1: Array<DoubleArray>, option: Int = 1):Array<DoubleArray> {
     val matrix = Array(m1[0].size) { DoubleArray(m1.size) }
@@ -144,6 +149,7 @@ fun transpose(m1: Array<DoubleArray>, option: Int = 1):Array<DoubleArray> {
     return matrix
 }
 
+
 fun multiplyByScalar(m1: Array<DoubleArray>, n: Double): Array<DoubleArray> {
     for(i in m1.indices) {
         for(j in m1[0].indices) {
@@ -152,6 +158,7 @@ fun multiplyByScalar(m1: Array<DoubleArray>, n: Double): Array<DoubleArray> {
     }
     return m1
 }
+
 
 fun multiplyMatrices(m1: Array<DoubleArray>, m2: Array<DoubleArray>): Array<DoubleArray>? {
     if(m1[0].size != m2.size) {
@@ -173,6 +180,7 @@ fun multiplyMatrices(m1: Array<DoubleArray>, m2: Array<DoubleArray>): Array<Doub
     return matrix
 }
 
+
 fun printMatrix(matrix: Array<DoubleArray>) {
     var output = ""
     for (i in matrix.indices) {
@@ -184,6 +192,7 @@ fun printMatrix(matrix: Array<DoubleArray>) {
     }
     println(output)
 }
+
 
 fun findCofactor(m1: Array<DoubleArray>, column: Int, row: Int = 0): Array<DoubleArray> {
     val cofactor = Array(m1.size - 1) {DoubleArray (m1.size - 1)}
@@ -200,6 +209,7 @@ fun findCofactor(m1: Array<DoubleArray>, column: Int, row: Int = 0): Array<Doubl
     }
     return cofactor
 }
+
 
 fun determinant(m1: Array<DoubleArray>): Double {
     var sum = 0.0
@@ -218,6 +228,7 @@ fun determinant(m1: Array<DoubleArray>): Double {
     return sum
 }
 
+
 fun inverse(m1: Array<DoubleArray>): Array<DoubleArray> {
     var inverse = Array(m1.size) {DoubleArray(m1.size)}
     for(i in m1.indices) {
@@ -234,6 +245,5 @@ fun inverse(m1: Array<DoubleArray>): Array<DoubleArray> {
             if(inverse[i][j] == -0.0) inverse[i][j] = 0.0
         }
     }
-
     return inverse
 }

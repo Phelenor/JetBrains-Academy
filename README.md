@@ -1,2 +1,2 @@
 # JetBrains-Academy
- Several Hyperskill Projects
+ Simple Hyperskill projects
